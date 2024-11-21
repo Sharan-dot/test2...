@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
-    <!-- Describe using a properly structured html document and your own words the responsibility of the action attribute of 
-a form tag. Apply css formatting to change the background of the the paragraphs to silver. Keep the foreground color as black. 
-Change the non-silver space around your paragraph to have a left and bottom margin equal to the height of a default character.
--->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Attribute Description</title>
     <style>
-        /* Put your css here */
+        /* Style for the paragraphs */
+        p {
+            background-color: silver; /* Background color set to silver */
+            color: black; /* Foreground text color set to black */
+            margin-left: 1em; /* Left margin equal to 1 character height */
+            margin-bottom: 1em; /* Bottom margin equal to 1 character height */
+            padding: 10px; /* Padding inside the paragraph for readability */
+        }
     </style>
 </head>
-
-
 <body>
     <main>
-        <h1>How the Action attribute works</h1>
-        <h2>... in my own words</h2>
-        <p></p>
+        <h1>How the Action Attribute Works</h1>
+        <h2>... in My Own Words</h2>
+        <p>
+            The <code>action</code> attribute in a <code>&lt;form&gt;</code> tag defines where the form's data 
+            will be sent when the user submits the form. It typically points to a URL or script on the server 
+            responsible for processing the submitted data.
+        </p>
+        <p>
+            For example, if the <code>action</code> is set to <code>https://example.com/submit</code>, the form data will be 
+            sent to that URL when the user clicks the submit button. If omitted, the form data is sent to the 
+            current page's URL.
+        </p>
     </main>
 </body>
-
-
 </html>

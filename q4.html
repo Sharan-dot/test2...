@@ -1,29 +1,28 @@
 <!DOCTYPE html>
-
-
+<html lang="en">
 <head>
-
-<!-- The following custom element logs the number of days until New Years to the console. 
-Visible in the "inspect" developer tools. Finish the custom element to put the days left in to the .html -->
-
+    <title>Days to New Year</title>
 </head>
-
 <body>
-    <h1>There are <x-days-to-newyears></x-days-to-newyears> day(s) left until the new year in the Gregorian calendar.
-    </h1>
+    <h1>There are <x-days-to-newyears></x-days-to-newyears> day(s) left until the new year in the Gregorian calendar.</h1>
 </body>
 <script>
-    class DaysToNewYears extends HTMLElement{
-        connectedCallback(){
-            let today=new Date();
-            let nNewYearsEve=new Date(today.getFullYear(), 11, 31);
-            let nSeconds = 1000*60*60*24;
-            let nDaysLeft = Math.ceil((nNewYearsEve.getTime()-today.getTime())/(nSeconds));
-            console.log(nDaysLeft); //logs the value we are looking for in our heading
-            // put your "secret sauce here to get this in to the document
+    class DaysToNewYears extends HTMLElement {
+        connectedCallback() {
+            // Calculate the number of days left until New Year's Eve
+            const today = new Date();
+            const newYearsEve = new Date(today.getFullYear(), 11, 31); // December 31 of the current year
+            const millisecondsInADay = 1000 * 60 * 60 * 24; // Number of milliseconds in one day
+            const daysLeft = Math.ceil((newYearsEve - today) / millisecondsInADay); // Calculate days left
+
+            console.log(daysLeft); // Log the result to the console
+
+            // Insert the number of days left into the custom element's content
+            this.innerHTML = daysLeft;
         }
     }
+
+    // Define the custom element
     customElements.define("x-days-to-newyears", DaysToNewYears);
 </script>
-
 </html>
